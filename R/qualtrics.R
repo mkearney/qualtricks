@@ -13,9 +13,9 @@ print.qualtrics <- function(x) {
   x <- strsplit(gsub("-", "+", x), "\\+")
   is_items <- vapply(x, length, double(1)) > 1L
   if (sum(is_items, na.rm = TRUE) > 0) {
-  context <- lapply(x[is_items], "[[", 1)
-  item <- lapply(x[is_items], "[[", 2)
-  x[is_items] <- Map(make_items, item, context)
+    context <- lapply(x[is_items], "[[", 1)
+    item <- lapply(x[is_items], "[[", 2)
+    x[is_items] <- Map(make_items, item, context)
   }
   nchars <- nchar(varnames)
   spmax <- max(nchars, na.rm = TRUE) + 2
@@ -47,14 +47,14 @@ is_item <- function(x) inherits(x, "item")
 
 add_items <- function(data, varnames) {
   if (sum(sapply(x, is_item), na.rm = TRUE) > 0L) {
-  contexts <- lapply(x[sapply(x, is_item)], item_context)
-  newcontext <- which(sapply(x, is_item))[which(!duplicated(contexts))]
-  varnames <- data[[1]][newcontext]
-  context_rows <- newcontext + seq(0, length(newcontext) - 1)
-  contexts <- contexts[!duplicated(contexts)]
-  for (i in seq_along(contexts)) {
-    x <- insert_element(x, context[i], context_rows)
-  }
+    contexts <- lapply(x[sapply(x, is_item)], item_context)
+    newcontext <- which(sapply(x, is_item))[which(!duplicated(contexts))]
+    varnames <- data[[1]][newcontext]
+    context_rows <- newcontext + seq(0, length(newcontext) - 1)
+    contexts <- contexts[!duplicated(contexts)]
+    for (i in seq_along(contexts)) {
+      x <- insert_element(x, context[i], context_rows)
+    }
   }
   x
 }
