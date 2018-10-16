@@ -1,12 +1,6 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
-```
 # qualtricks <img src="man/figures/logo.png" width="160px" align="right" />
 
 <!--[![Build status](https://travis-ci.org/mkearney/qualtricks.svg?branch=master)](https://travis-ci.org/mkearney/qualtricks)
@@ -15,6 +9,7 @@ knitr::opts_chunk$set(echo = TRUE, collapse = TRUE, comment = "#>")
 
 #![Downloads](https://cranlogs.r-pkg.org/badges/qualtricks)
 #![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/qualtricks)-->
+
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 Tools for Working with Qualtrics Data
@@ -33,7 +28,6 @@ if (!requireNamespace("remotes")) {
 remotes::install_github("mkearney/qualtricks")
 ```
 
-
 ## Use
 
 Streamlined process for **reading** Qualtrics data.
@@ -49,4 +43,3 @@ Streamlined process for **recoding** Likert items
 ## recode likerts (from labels to integers)
 qualtricks::recode_likerts(d)
 ```
-
