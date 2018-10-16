@@ -7,10 +7,10 @@
 read_qualtrics(x)
 }
 \arguments{
-\item{Path}{to CSV exported from Qualtrics}
+\item{x}{Path to CSV exported from Qualtrics}
 }
 \value{
-A tibble
+A tibble data frame.
 }
 \description{
 Reads and formats data exported from qualtrics.

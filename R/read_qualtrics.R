@@ -12,18 +12,21 @@ is_csv <- function(x) {
 #'
 #' Reads and formats data exported from qualtrics.
 #'
-#' @param Path to CSV exported from Qualtrics
-#' @return A tibble
+#' @param x Path to CSV exported from Qualtrics
+#' @return A tibble data frame.
 #' @export
-read_qualtrics <- function(x) {
+read_qualtrics <- function(x) UseMethod("read_qualtrics")
+
+#' @export
+read_qualtrics.default <- function(x) {
   ## check to make sure it's a valid csv file
   stopifnot(is_csv(x))
   ## read first three rows
-  vars <- read.csv(x, header = TRUE, stringsAsFactors = FALSE)
+  vars <- utils::read.csv(x, header = TRUE, stringsAsFactors = FALSE)
   x <- vars[c(3:nrow(vars)), ]
   vars <- vars[1, , drop = TRUE]
   tmp <- tempfile(fileext = ".csv")
-  write.csv(x, tmp, row.names = FALSE)
+  utils::write.csv(x, tmp, row.names = FALSE)
   x <- suppressMessages(readr::read_csv(tmp))
   ## rename some columns
   #old <- c("StartDate", "EndDate", "Duration..in.seconds.", "LocationLatitude","LocationLongitude")
@@ -113,7 +116,7 @@ prep_char_vector <- function(x) {
   x
 }
 
-recode_likert <- function(x) {
+recode_likert_col <- function(x) {
   ## prep/coerce to char (if factor of single-elem list)
   x <- prep_char_vector(x)
   ## proceed if char
@@ -209,8 +212,15 @@ recode_likert <- function(x) {
   x
 }
 
-recode_likerts <- function(x) {
-  x[1:ncol(x)] <- lapply(x, recode_likert)
+#' Recode likert items
+#'
+#' Converts likert columns into integer columns
+#'
+#' @param x Input data frame with likert columns
+#' @return A data frame with likert choice columns replaced with integer values
+#' @export
+recode_likert <- function(x) {
+  x[1:ncol(x)] <- lapply(x, recode_likert_col)
   x
 }
 

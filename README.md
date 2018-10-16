@@ -3,11 +3,14 @@
 
 # qualtricks <img src="man/figures/logo.png" width="160px" align="right" />
 
-<!--[![Build status](https://travis-ci.org/mkearney/qualtricks.svg?branch=master)](https://travis-ci.org/mkearney/qualtricks)
-[![CRAN status](https://www.r-pkg.org/badges/version/qualtricks)](https://cran.r-project.org/package=qualtricks)
-[![Coverage Status](https://codecov.io/gh/mkearney/qualtricks/branch/master/graph/badge.svg)](https://codecov.io/gh/mkearney/qualtricks?branch=master)
+[![Build
+status](https://travis-ci.org/mkearney/qualtricks.svg?branch=master)](https://travis-ci.org/mkearney/qualtricks)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/qualtricks)](https://cran.r-project.org/package=qualtricks)
+[![Coverage
+Status](https://codecov.io/gh/mkearney/qualtricks/branch/master/graph/badge.svg)](https://codecov.io/gh/mkearney/qualtricks?branch=master)
 
-#![Downloads](https://cranlogs.r-pkg.org/badges/qualtricks)
+<!--#![Downloads](https://cranlogs.r-pkg.org/badges/qualtricks)
 #![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/qualtricks)-->
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -41,5 +44,5 @@ Streamlined process for **recoding** Likert items
 
 ``` r
 ## recode likerts (from labels to integers)
-qualtricks::recode_likerts(d)
+qualtricks::recode_likert(d)
 ```
