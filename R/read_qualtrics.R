@@ -224,4 +224,4 @@ recode_likert <- function(x) {
   x
 }
 
-
+jfoo <- function(n) {   as.integer(runif(n, 1, 7)) }
