@@ -225,3 +225,7 @@ recode_likert <- function(x) {
 }
 
 jfoo <- function(n) {   as.integer(runif(n, 1, 7)) }
+
+mfoo <- function(n) {
+  as.integer(runif(n, 1, 5))
+}
