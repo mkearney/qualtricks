@@ -226,6 +226,14 @@ recode_likert <- function(x) {
 
 jfoo <- function(n) {   as.integer(runif(n, 1, 7)) }
 
+
+#' Mike Foo
+#'
+#' A 5-point data-generating function
+#'
+#' @param n Number of observations to generate
+#' @return An integer vector
+#' @export
 mfoo <- function(n) {
   as.integer(runif(n, 1, 5))
 }
