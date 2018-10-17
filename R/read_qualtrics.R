@@ -224,6 +224,14 @@ recode_likert <- function(x) {
   x
 }
 
+#' Jordan's Foo
+#'
+#' A 7-point data-generating function
+#'
+#' @param n Number of observations to generate
+#' @return An integer vector
+#' @export
+
 jfoo <- function(n) {   as.integer(runif(n, 1, 7)) }
 
 
