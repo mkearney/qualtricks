@@ -28,7 +28,11 @@ Imports:
     tfse,
     readr,
     tibble,
-    utils
+    utils,
+    datasets,
+    sp,
+    maptools,
+    maps
 Suggests: 
     testthat,
     covr
